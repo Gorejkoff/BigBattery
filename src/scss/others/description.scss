@@ -1,0 +1,68 @@
+@use '../assets/variablesSCSS.scss' as *;
+
+.description {
+
+   padding-top: var(--padding-block);
+   padding-bottom: var(--padding-block);
+
+   .js-tabs-inner {
+      padding-bottom: 15px;
+   }
+
+   &__container {}
+
+   &__body {
+      max-width: 960px;
+      margin: 0 auto;
+
+      @media (min-width:992px) {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+      }
+   }
+
+   &__image {
+      img {
+         width: 100%;
+      }
+   }
+
+   &__tabs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (min-width:992px) {
+         padding-left: 60px;
+      }
+   }
+
+   &__tab-body {
+      border-bottom: 1px solid var(--color-pale-blue);
+   }
+
+   &__tabs-button {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      font-weight: 500;
+      font-size: var(--fs-14);
+      line-height: 150%;
+
+      @media (min-width:992px) {
+         font-size: var(--fs-16);
+      }
+
+      svg {
+         transition: transform $tr-time;
+      }
+
+      .js-tabs-open & svg {
+         transform: rotate(45deg);
+      }
+   }
+}

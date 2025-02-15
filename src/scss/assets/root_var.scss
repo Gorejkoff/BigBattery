@@ -1,0 +1,39 @@
+:root {
+   --font-family: "Roboto", sans-serif;
+
+   --padding-block: 40px;
+
+   @media (min-width:1024px) {
+      --padding-block: 60px;
+   }
+
+   --fs-11: 11px;
+   --fs-12: 12px;
+   --fs-13: 13px;
+   --fs-14: 14px;
+   --fs-15: 15px;
+   --fs-16: 16px;
+   --fs-19: 19px;
+   --fs-20: 20px;
+   --fs-24: 24px;
+   --fs-27: 27px;
+   --fs-36: 36px;
+
+   --color-white: #ffffff;
+   --color-smoky-white: #f3f3f3;
+   --color-black: #313131;
+   --color-black-04: rgba(49, 49, 49, 0.4);
+   --color-blue: #155ea0;
+   --color-blue-alice: #f3f9ff;
+   --color-pale-blue: #dedfe7;
+   --color-green: #008001;
+   --color-grey: #80868b;
+   --color-gray-light: #f4f4f4;
+   --color-gainsborough: #dedede;
+   --color-forest-wolf: #e5e5e3;
+   --color-orange-yellow: #ffc025;
+   --color-modal-bg: rgba(0, 0, 0, 0.6);
+   --color-pearl-blackberry: #71717a;
+   --color-telegray: #8a8a8a;
+
+}

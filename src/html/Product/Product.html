@@ -1,0 +1,138 @@
+<section class="product">
+   <div class="product__container">
+      <div class="product__body">
+         <div class="product__images">
+            @@include('./Product-Module/Product-Swiper.html',{})
+         </div>
+
+         <div class="product__description">
+
+            <div class="product__review">
+               <div class="product__review-stars">
+                  @@include('../Elements/Stars.html',{class:""})
+               </div>
+               <div>Be the first to</div>
+               <a class="product__review-link" href="404.html">leave a review</a>
+            </div>
+
+            <h1 class="product__name title">48V HUSKY 2 KIT</h1>
+
+            <div class="product__price">
+               <div class="product__price-actual">$2,100</div>
+               <div class="product__price-not-actual">$2,315</div>
+               @@include('../Elements/Save.html',{text:"SAVE 9%"})
+            </div>
+
+
+            <ul class="product__parameters">
+               <li>IP65 Protection Rating</li>
+               <li>Automatic Self-Heating</li>
+               <li>Parallel Communications</li>
+               <li>Simple Installation</li>
+            </ul>
+
+            <div class="product__compatibility">
+               <div class="product__compatibility-title">this battery is compatible with:</div>
+               <ul>
+                  <li><img src="@img/svg/car-1.svg" alt="icon"><span>golf carts</span></li>
+                  <li><img src="@img/svg/car-1.svg" alt="icon"><span>utility carts</span></li>
+                  <li><img src="@img/svg/car-2.svg" alt="icon"><span>rVs</span></li>
+                  <li><img src="@img/svg/car-3.svg" alt="icon"><span>Camper Vans</span></li>
+               </ul>
+            </div>
+
+            <div>
+               @@include('../Elements/Button.html',{type: "button", text:"add to cart"})
+               @@include('./Product-Module/Product-Label.html',{})
+            </div>
+
+            <div class="product__additions">
+
+               <div class="product__additions-title">Add-ons you might need:</div>
+
+               <form class="product__additions-form" action="#" method="post" name="additions">
+
+                  <label class="product__additions-card">
+                     @@include('../Elements/Checkbox.html',{})
+                     <span class="product__additions-card-image">
+                        <img src="@img/png/image-1.png" alt="изображение товара">
+                     </span>
+                     <span class="product__additions-card-content">
+                        <span class="product__additions-card-review">
+                           <span class="product__additions-card-review-body">
+                              <span class="product__additions-card-stars">
+                                 @@include('../Elements/Stars.html',{class:"active"})
+                              </span>
+                              <span class="product__additions-card-quantity">(370)</span>
+                           </span>
+                           <span class="product__additions-card-name">Parallel comm Cable</span>
+                        </span>
+                        <span class="product__additions-card-price">
+                           <span class="product__additions-card-price-actual">+$32</span>
+                           <span class="product__additions-card-price-not-actual">+$35</span>
+                        </span>
+                     </span>
+                  </label>
+                  <label class="product__additions-card">
+                     @@include('../Elements/Checkbox.html',{})
+                     <span class="product__additions-card-image">
+                        <img src="@img/png/image-2.png" alt="изображение товара">
+                     </span>
+                     <span class="product__additions-card-content">
+                        <span class="product__additions-card-review">
+                           <span class="product__additions-card-review-body">
+                              <span class="product__additions-card-stars">
+                                 @@include('../Elements/Stars.html',{class:"active"})
+                              </span>
+                              <span class="product__additions-card-quantity">(370)</span>
+                           </span>
+                           <span class="product__additions-card-name">4AWG (Black and Red) 3FT Ring to Ring Terminal Cable</span>
+                        </span>
+                        <span class="product__additions-card-price">
+                           <span class="product__additions-card-price-actual">+$32</span>
+                           <span class="product__additions-card-price-not-actual">+$35</span>
+                        </span>
+                     </span>
+                  </label>
+                  <label class="product__additions-card">
+                     @@include('../Elements/Checkbox.html',{})
+                     <span class="product__additions-card-image">
+                        <img src="@img/png/image-3.png" alt="изображение товара">
+                     </span>
+                     <span class="product__additions-card-content">
+                        <span class="product__additions-card-review">
+                           <span class="product__additions-card-review-body">
+                              <span class="product__additions-card-stars">
+                                 @@include('../Elements/Stars.html',{class:"active"})
+                              </span>
+                              <span class="product__additions-card-quantity">(370)</span>
+                           </span>
+                           <span class="product__additions-card-name">Parallel Busbar</span>
+                        </span>
+                        <span class="product__additions-card-price">
+                           <span class="product__additions-card-price-actual">+$32</span>
+                           <span class="product__additions-card-price-not-actual">+$35</span>
+                        </span>
+                     </span>
+                  </label>
+
+               </form>
+
+               <div>
+                  <div class="product__total-price">
+                     <div>Total Price:</div>
+                     <div class="product__total-price-actual">$82</div>
+                     <div class="product__total-price-not-actual">$90</div>
+                     @@include('../Elements/Save.html',{text:"SAVE 9%"})
+                  </div>
+                  @@include('../Elements/Button.html',{type: "button", text:"add to cart"})
+                  @@include('./Product-Module/Product-Label.html',{})
+               </div>
+
+            </div>
+         </div>
+         @@include('./Product-Module/Product-Tabs.html',{})
+      </div>
+   </div>
+
+</section>

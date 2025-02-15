@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{"title":"BigBattery"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+
+
+      <div class="main">
+         <div id="product-page-new">
+
+            @@include('html/Product/Product.html',{})
+            @@include('html/Compatibility/Compatibility.html',{})
+            @@include('html/Description/Description.html',{})
+            @@include('html/Feedback/Feedback.html',{})
+            @@include('html/Might-Like/Might-Like.html',{})
+
+         </div>
+      </div>
+   </div>
+
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

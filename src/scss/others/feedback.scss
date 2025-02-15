@@ -1,0 +1,119 @@
+@use "../assets/variablesSCSS.scss" as *;
+
+.feedback {
+   padding-top: var(--padding-block);
+   padding-bottom: var(--padding-block);
+   background-color: var(--color-blue-alice);
+   overflow: hidden;
+
+
+   &__container {}
+
+   &__stars {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      fill: var(--color-green);
+      stroke: var(--color-green);
+
+      svg {
+         width: 24px;
+      }
+   }
+
+   &__body {
+      margin: 0 auto;
+      max-width: 1193px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   &__swiper {
+      margin: 0 auto;
+      width: 82vw;
+
+      @media (min-width:768px) {
+         margin: 0;
+         overflow: hidden;
+         width: 100%;
+      }
+   }
+
+   &__slide {
+      padding: 25px 16px;
+      border: 1px solid var(--color-forest-wolf);
+      border-radius: 20px;
+      background-color: var(--color-white);
+
+      @media (min-width:1024px) {
+         padding: 52px 25px;
+      }
+
+      &>*:not(:last-child) {
+         margin-bottom: 15px;
+      }
+   }
+
+   &__slide-stars {
+      display: flex;
+      fill: var(--color-orange-yellow);
+      stroke: var(--color-orange-yellow);
+   }
+
+   &__item {
+      font-size: var(--fs-13);
+      line-height: 125%;
+
+      @media (min-width:768px) {
+         font-size: var(--fs-16);
+      }
+
+      @media (min-width:1024px) {
+         font-size: var(--fs-20);
+      }
+
+      &::after,
+      &::before {
+         content: "\"";
+
+      }
+   }
+
+   &__author {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      font-size: 13px;
+      line-height: 100%;
+   }
+
+   &__next,
+   &__prev {
+      transition: opacity $tr-time;
+
+      @media (max-width:767.98px) {
+         display: none;
+      }
+
+      &.swiper-button-disabled {
+         opacity: .5;
+      }
+   }
+
+   &__pagination {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      &>* {
+         height: 3px;
+         flex: 0 1 20px;
+      }
+
+      @media (min-width:768px) {
+         display: none;
+      }
+   }
+}
