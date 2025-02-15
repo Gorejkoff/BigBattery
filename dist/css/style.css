@@ -643,7 +643,7 @@ body {
 
 .product-swiper {
   position: relative;
-  margin-bottom: var(--margin-product-elements);
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -653,7 +653,6 @@ body {
 
 .product-swiper__thumb .swiper-slide-thumb-active {
   border: 1px solid var(--color-pale-blue);
-  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -749,6 +748,7 @@ body {
 }
 
 .product-swiper__outside-pagination {
+  position: relative;
   color: var(--color-white);
   display: -webkit-box;
   display: -ms-flexbox;

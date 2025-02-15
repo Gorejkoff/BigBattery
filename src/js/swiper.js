@@ -6178,6 +6178,21 @@ var Swiper = function () {
 
 
 if (document.querySelector('.product-swiper')) {
+
+   let swiperOutside;
+   const SWIPER_MAIN = document.querySelector('.product-swiper__main');
+   const SWIPER_MAIN_INNER = SWIPER_MAIN.innerHTML;
+
+   SWIPER_MAIN.insertAdjacentHTML(
+      'afterend',
+      `<div class="product-swiper__thumb" thumbsSlider="">
+         ${SWIPER_MAIN_INNER}
+      </div>`
+   )
+
+
+
+
    const swiper2 = new Swiper('.product-swiper__thumb', {
       keyboard: {
          enabled: true,
@@ -6188,7 +6203,6 @@ if (document.querySelector('.product-swiper')) {
       speed: 300,
       slidesPerView: 4.34,
       spaceBetween: 10,
-
    });
    const swiper1 = new Swiper('.product-swiper__main', {
       keyboard: {
@@ -6203,7 +6217,66 @@ if (document.querySelector('.product-swiper')) {
       thumbs: {
          swiper: swiper2,
       },
+      zoom: {
+         maxRatio: 2,
+      },
    });
+
+
+
+   function addSwiperOutside() {
+
+      document.body.insertAdjacentHTML(
+         'beforeend',
+         `<div class="product-swiper__outside">
+         <div class="product-swiper__outside-header">
+            <div class="product-swiper__outside-pagination"></div>
+            <button class="product-swiper__close" type="button" aria-label="Закрыть слайдер">
+               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L19 19M19 1L1 19" stroke="white" stroke-width="3"/></svg>
+            </button>
+            </div>
+            ${SWIPER_MAIN_INNER}
+         </div>`
+      )
+
+      swiperOutside = new Swiper('.product-swiper__outside', {
+         keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+         },
+         // loop: true,
+         speed: 300,
+         slidesPerView: 1,
+         spaceBetween: 10,
+         initialSlide: swiper1.activeIndex,
+         watchSlidesProgress: true,
+         zoom: {
+            maxRatio: 2,
+         },
+         pagination: {
+            el: ".product-swiper__outside-pagination",
+            type: "fraction",
+         },
+      });
+
+
+   }
+
+   function removeSwiperOutside() {
+      swiperOutside.destroy();
+      document.querySelector('.product-swiper__outside').remove();
+   }
+
+   document.body.addEventListener('click', (event) => {
+      if (event.target.closest('.full-screen')) {
+         addSwiperOutside();
+      }
+      if (event.target.closest('.product-swiper__close')) {
+         removeSwiperOutside();
+      }
+   })
+
+
 }
 
 
@@ -6221,72 +6294,19 @@ if (document.querySelector('.compatibility__swiper')) {
 
 if (document.querySelector('.feedback__swiper')) {
    const swiper = new Swiper('.feedback__swiper', {
-      // keyboard: {
-      //    enabled: true,
-      //    onlyInViewport: true,
-      // },
-      // loop: true,
       spaceBetween: 10,
       speed: 300,
       slidesPerView: 3,
       grabCursor: true,
-      // breakpoints: {
-      //    1024: {
-      //       spaceBetween: 20,
-      //       slidesPerView: 3
-      //    },
-      //    768: {
-      //       slidesPerView: 2
-      //    }
-      // },
       navigation: {
          nextEl: ".feedback__next",
          prevEl: ".feedback__prev",
       },
-      // pagination: {
-      //    el: '.pagination__body',
-      //    type: 'bullets',
-      //    clickable: true,
-      // },
    });
 }
 
 
-/* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */
-// if (document.querySelector('.swiper')) {
-//    let swiperState;
-//    let swiper;
-//    changeStateSlider();
-//    window.addEventListener('resize', () => {
-//       changeStateSlider();
-//    })
-//    function initswiper() {
-//       swiper = new Swiper('.swiper', {
-//          keyboard: {
-//             enabled: true,
-//             onlyInViewport: true,
-//          },
-//          allowTouchMove: true,
-//          loop: false,
-//          speed: 300,
-//          slidesPerView: 1.3,
-//          spaceBetween: 24,
-//       });
-//    }
-//    function changeStateSlider() {
-//       if (!MIN768.matches) {
-//          if (!swiperState) {
-//             swiperState = true;
-//             initswiper();
-//          }
-//       } else {
-//          if (swiperState) {
-//             swiperState = false;
-//             swiper.destroy(true, true);
-//          }
-//       }
-//    }
-// }
+
 
 
 /* пример инициализации слайдера */
