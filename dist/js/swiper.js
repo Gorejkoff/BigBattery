@@ -6178,14 +6178,6 @@ var Swiper = function () {
 
 
 if (document.querySelector('.product-swiper')) {
-
-   const SWIPER_MAIN = document.querySelector('.product-swiper__main');
-   SWIPER_MAIN.insertAdjacentHTML(
-      'afterend',
-      `<div class="product-swiper__thumb swiper" thumbsSlider="">
-      ${SWIPER_MAIN.innerHTML}
-      </div>`)
-
    const swiper2 = new Swiper('.product-swiper__thumb', {
       keyboard: {
          enabled: true,
@@ -6196,6 +6188,7 @@ if (document.querySelector('.product-swiper')) {
       speed: 300,
       slidesPerView: 4.34,
       spaceBetween: 10,
+
    });
    const swiper1 = new Swiper('.product-swiper__main', {
       keyboard: {
@@ -6217,51 +6210,44 @@ if (document.querySelector('.product-swiper')) {
 if (document.querySelector('.compatibility__swiper')) {
    const swiper = new Swiper('.compatibility__swiper', {
       loop: true,
-      spaceBetween: 30,
+      spaceBetween: 10,
       speed: 300,
-      slidesPerView: 3,
+      slidesPerView: 4,
       grabCursor: true,
-      pagination: {
-         el: '.compatibility__pagination',
-         type: 'bullets',
-         clickable: true,
-      },
-      breakpoints: {
-         1024: {
-            slidesPerView: 6,
-         },
-         768: {
-            slidesPerView: 4,
-         },
+      initialSlide: 2,
 
-      },
    });
 }
 
 if (document.querySelector('.feedback__swiper')) {
    const swiper = new Swiper('.feedback__swiper', {
+      // keyboard: {
+      //    enabled: true,
+      //    onlyInViewport: true,
+      // },
+      // loop: true,
       spaceBetween: 10,
       speed: 300,
-      slidesPerView: 1,
+      slidesPerView: 3,
       grabCursor: true,
-      // centeredSlides: true,
-      breakpoints: {
-         1024: {
-            slidesPerView: 3,
-         },
-         768: {
-            slidesPerView: 2,
-         }
-      },
+      // breakpoints: {
+      //    1024: {
+      //       spaceBetween: 20,
+      //       slidesPerView: 3
+      //    },
+      //    768: {
+      //       slidesPerView: 2
+      //    }
+      // },
       navigation: {
          nextEl: ".feedback__next",
          prevEl: ".feedback__prev",
       },
-      pagination: {
-         el: '.feedback__pagination',
-         type: 'bullets',
-         clickable: true,
-      },
+      // pagination: {
+      //    el: '.pagination__body',
+      //    type: 'bullets',
+      //    clickable: true,
+      // },
    });
 }
 

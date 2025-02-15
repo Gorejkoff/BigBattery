@@ -3,10 +3,6 @@
 
    --padding-block: 40px;
 
-   @media (min-width:1024px) {
-      --padding-block: 60px;
-   }
-
    --fs-11: 11px;
    --fs-12: 12px;
    --fs-13: 13px;
@@ -36,4 +32,7 @@
    --color-pearl-blackberry: #71717a;
    --color-telegray: #8a8a8a;
 
+   @media (min-width:1024px) {
+      --padding-block: 60px;
+   }
 }
