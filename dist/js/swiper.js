@@ -6190,9 +6190,6 @@ if (document.querySelector('.product-swiper')) {
       </div>`
    )
 
-
-
-
    const swiper2 = new Swiper('.product-swiper__thumb', {
       keyboard: {
          enabled: true,
@@ -6221,8 +6218,6 @@ if (document.querySelector('.product-swiper')) {
          maxRatio: 2,
       },
    });
-
-
 
    function addSwiperOutside() {
 
@@ -6285,10 +6280,22 @@ if (document.querySelector('.compatibility__swiper')) {
       loop: true,
       spaceBetween: 10,
       speed: 300,
-      slidesPerView: 4,
+      slidesPerView: 3,
       grabCursor: true,
       initialSlide: 2,
-
+      pagination: {
+         el: '.compatibility__pagination',
+         type: 'bullets',
+         clickable: true,
+      },
+      breakpoints: {
+         1024: {
+            slidesPerView: 6,
+         },
+         768: {
+            slidesPerView: 4,
+         }
+      },
    });
 }
 
@@ -6296,11 +6303,24 @@ if (document.querySelector('.feedback__swiper')) {
    const swiper = new Swiper('.feedback__swiper', {
       spaceBetween: 10,
       speed: 300,
-      slidesPerView: 3,
+      slidesPerView: 1,
       grabCursor: true,
       navigation: {
          nextEl: ".feedback__next",
          prevEl: ".feedback__prev",
+      },
+      pagination: {
+         el: '.feedback__pagination',
+         type: 'bullets',
+         clickable: true,
+      },
+      breakpoints: {
+         1024: {
+            slidesPerView: 3,
+         },
+         768: {
+            slidesPerView: 2,
+         }
       },
    });
 }
