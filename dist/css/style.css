@@ -306,7 +306,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: var(--color-green) url("../../img/svg/check.svg") center/70% no-repeat;
+  background: var(--color-green) url("@img/svg/check.svg") center/70% no-repeat;
   display: none;
 }
 
