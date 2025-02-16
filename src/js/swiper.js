@@ -6183,7 +6183,7 @@ if (document.querySelector('.product-swiper')) {
    const SWIPER_MAIN = document.querySelector('.product-swiper__main');
    const SWIPER_MAIN_INNER = SWIPER_MAIN.innerHTML;
 
-   SWIPER_MAIN.insertAdjacentHTML(
+   document.querySelector('.product-swiper__main-sell').insertAdjacentHTML(
       'afterend',
       `<div class="product-swiper__thumb" thumbsSlider="">
          ${SWIPER_MAIN_INNER}
@@ -6196,17 +6196,18 @@ if (document.querySelector('.product-swiper')) {
          onlyInViewport: true,
       },
       direction: "horizontal",
-      loop: true,
+      // loop: true,
       speed: 300,
       slidesPerView: 4.34,
       spaceBetween: 10,
+      grabCursor: true,
    });
    const swiper1 = new Swiper('.product-swiper__main', {
       keyboard: {
          enabled: true,
          onlyInViewport: true,
       },
-      loop: true,
+      // loop: true,
       speed: 300,
       slidesPerView: 1,
       spaceBetween: 10,
@@ -6216,6 +6217,10 @@ if (document.querySelector('.product-swiper')) {
       },
       zoom: {
          maxRatio: 2,
+      },
+      navigation: {
+         nextEl: ".product-swiper__main-next",
+         prevEl: ".product-swiper__main-prev",
       },
    });
 
@@ -6229,8 +6234,14 @@ if (document.querySelector('.product-swiper')) {
             <button class="product-swiper__close" type="button" aria-label="Закрыть слайдер">
                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L19 19M19 1L1 19" stroke="white" stroke-width="3"/></svg>
             </button>
-            </div>
+         </div>
             ${SWIPER_MAIN_INNER}
+            <button type="button" class="product-swiper__outside-prev">
+               <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 6L1.5 6M1.5 6L6 10.5M1.5 6L6 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="product-swiper__outside-next">
+               <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5H14.5M14.5 5.5L10 1M14.5 5.5L10 10.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
          </div>`
       )
 
@@ -6245,12 +6256,17 @@ if (document.querySelector('.product-swiper')) {
          spaceBetween: 10,
          initialSlide: swiper1.activeIndex,
          watchSlidesProgress: true,
+         grabCursor: true,
          zoom: {
             maxRatio: 2,
          },
          pagination: {
             el: ".product-swiper__outside-pagination",
             type: "fraction",
+         },
+         navigation: {
+            nextEl: ".product-swiper__outside-next",
+            prevEl: ".product-swiper__outside-prev",
          },
       });
 

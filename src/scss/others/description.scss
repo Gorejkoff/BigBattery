@@ -5,14 +5,20 @@
    padding-top: var(--padding-block);
    padding-bottom: var(--padding-block);
 
+   @media (min-width:1024px) {
+      padding-top: 60px;
+      padding-bottom: 50px;
+   }
+
    .js-tabs-inner {
       padding-bottom: 15px;
+      line-height: 1.5;
    }
 
    &__container {}
 
    &__body {
-      max-width: 960px;
+      max-width: 967px;
       margin: 0 auto;
 
       @media (min-width:992px) {

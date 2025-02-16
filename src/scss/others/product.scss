@@ -14,7 +14,11 @@
    }
 
 
-   &__images {}
+   &__images {
+      @media (min-width:992px) {
+         width: min-content;
+      }
+   }
 
    &__description {
       flex: 1 1 auto;

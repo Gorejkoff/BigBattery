@@ -6,6 +6,10 @@
    background-color: var(--color-blue-alice);
    overflow: hidden;
 
+   @media (min-width:1024px) {
+      padding-top: 70px;
+      padding-bottom: 85px;
+   }
 
    &__container {}
 
