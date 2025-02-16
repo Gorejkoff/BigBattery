@@ -6181,9 +6181,11 @@ if (document.querySelector('.product-swiper')) {
 
    let swiperOutside;
    const SWIPER_MAIN = document.querySelector('.product-swiper__main');
+   const SWIPER_MAIN_SHELL = document.querySelector('.product-swiper__main-sell');
+   const FLOOR = document.querySelector('.product-swiper__main-floor');
    const SWIPER_MAIN_INNER = SWIPER_MAIN.innerHTML;
 
-   document.querySelector('.product-swiper__main-sell').insertAdjacentHTML(
+   SWIPER_MAIN_SHELL.insertAdjacentHTML(
       'afterend',
       `<div class="product-swiper__thumb" thumbsSlider="">
          ${SWIPER_MAIN_INNER}
@@ -6212,6 +6214,7 @@ if (document.querySelector('.product-swiper')) {
       slidesPerView: 1,
       spaceBetween: 10,
       watchSlidesProgress: true,
+      panOnMouseMove: true,
       thumbs: {
          swiper: swiper2,
       },
@@ -6223,6 +6226,43 @@ if (document.querySelector('.product-swiper')) {
          prevEl: ".product-swiper__main-prev",
       },
    });
+
+   function zoomMove(event) {
+      swiper1.zoom.in(2);
+
+      let swiperActive = SWIPER_MAIN.querySelector('.swiper-slide-active');
+      if (swiperActive) {
+         let x = event.layerX;
+         let y = event.layerY;
+
+         let zoomElement = swiperActive.querySelector('.swiper-zoom-container');
+         let height = zoomElement.offsetHeight;
+         let width = zoomElement.offsetWidth;
+
+         let offsetX = height / 2 - x;
+         let offsetY = width / 2 - y;
+
+         let setOffsetX = Math.abs(offsetX) > width / 2 ? width / 2 * Math.sign(offsetX) : offsetX;
+         let setOffsetY = Math.abs(offsetY) > height / 2 ? height / 2 * Math.sign(offsetY) : offsetY;
+
+         zoomElement.style.cssText = `
+         transform: translate3d(${setOffsetX}px, ${setOffsetY}px, 0px);
+         `
+      }
+   }
+
+   const xoomThrotle = throttle(zoomMove, 16);
+
+   FLOOR.addEventListener('mousemove', (event) => {
+      xoomThrotle(event)
+   })
+
+   FLOOR.addEventListener('mouseleave', () => {
+      setTimeout(() => { swiper1.zoom.out() }, 50)
+   })
+
+
+
 
    function addSwiperOutside() {
 
@@ -6270,7 +6310,6 @@ if (document.querySelector('.product-swiper')) {
          },
       });
 
-
    }
 
    function removeSwiperOutside() {
@@ -6286,8 +6325,6 @@ if (document.querySelector('.product-swiper')) {
          removeSwiperOutside();
       }
    })
-
-
 }
 
 
@@ -6340,9 +6377,6 @@ if (document.querySelector('.feedback__swiper')) {
       },
    });
 }
-
-
-
 
 
 /* пример инициализации слайдера */
