@@ -1,6 +1,6 @@
 @use "../assets/variablesSCSS.scss" as *;
 
-.feedback {
+#product-page-new .feedback {
    padding-top: var(--padding-block);
    padding-bottom: var(--padding-block);
    background-color: var(--color-blue-alice);
