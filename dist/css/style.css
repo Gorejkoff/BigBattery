@@ -857,7 +857,7 @@ body {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-.js-tabs-open #product-page-new .product-tabs__button svg {
+#product-page-new .product-tabs.js-tabs-open .product-tabs__button svg {
   -webkit-transform: rotate3d(1, 0, 0, 180deg);
           transform: rotate3d(1, 0, 0, 180deg);
 }
@@ -1024,7 +1024,7 @@ body {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-.js-tabs-open #product-page-new .description__tabs-button svg {
+#product-page-new .description .js-tabs-open .description__tabs-button svg {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);

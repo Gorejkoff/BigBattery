@@ -22,9 +22,11 @@
          transition: transform $tr-time;
       }
 
-      .js-tabs-open & svg {
-         transform: rotate3d(1, 0, 0, 180deg);
-      }
+
+   }
+
+   &.js-tabs-open .product-tabs__button svg {
+      transform: rotate3d(1, 0, 0, 180deg);
    }
 
    &__images {

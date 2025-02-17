@@ -67,8 +67,9 @@
          transition: transform $tr-time;
       }
 
-      .js-tabs-open & svg {
-         transform: rotate(45deg);
-      }
+   }
+
+   & .js-tabs-open .description__tabs-button svg {
+      transform: rotate(45deg);
    }
 }
