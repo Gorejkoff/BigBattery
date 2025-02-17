@@ -28,16 +28,25 @@
    }
 
    &__images {
+      padding-left: 10px;
+      padding-right: 10px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
    }
 
    &__images-cell {
-      padding-bottom: 103%;
+      padding: 20px 10px;
+      border-radius: 10px;
+      background-color: var(--color-gray-light);
+      overflow: hidden;
+   }
+
+   &__images-sell {
+      margin-bottom: 10px;
+      padding-bottom: 60%;
       position: relative;
       overflow: hidden;
-      border-radius: 10px;
 
       img {
          position: absolute;
@@ -48,5 +57,17 @@
          height: 100%;
          object-fit: cover;
       }
+   }
+
+   &__images-text {
+      font-weight: 600;
+      font-size: 15px;
+      text-align: center;
+
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
    }
 }
