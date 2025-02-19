@@ -4,7 +4,7 @@
    --color-blue-light: #3798ee;
 }
 
-#product-page-new .hover-linck {
+#product-page-new .hover-link {
    transition: color $tr-time;
 
    &:hover {
@@ -21,13 +21,13 @@
 #product-page-new .footer {
    position: relative;
    overflow: hidden;
-   color: var(--color-white);
+   color: var(--color-white, #fff) !important;
 
    ol {
       list-style: none;
    }
 
-   &__backgroud {
+   &__background {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -138,7 +138,7 @@
          height: 28px;
 
          path {
-            fill: var(--color-white)
+            fill: var(--color-white) !important;
          }
       }
    }
