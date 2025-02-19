@@ -7,13 +7,10 @@
 
 
 <body>
+   <div id="product-page-new">
 
-   <div class="wrapper">
-
-
-
-      <div class="main">
-         <div id="product-page-new">
+      <div class="wrapper">
+         <div class="main">
 
             @@include('html/Product/Product.html',{})
             @@include('html/Compatibility/Compatibility.html',{})
@@ -23,9 +20,10 @@
 
          </div>
       </div>
+
+      @@include('html/4_footer.html',{})
+
    </div>
-
-
    @@include('html/3_scripts.html',{
    swiper: true,
    })

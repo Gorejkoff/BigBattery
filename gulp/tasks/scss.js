@@ -33,6 +33,11 @@ export const scss = () => {
       //.pipe(app.plugins.if(app.isBuild, cleanCss()))
       //.pipe(rename({ extname: ".min.css" })) // переименовывание файла css 
       //.pipe(app.gulp.dest(app.path.build.css)) // адрес куда записывать файл
+
+
+
+
+
       .pipe(app.gulp.src(app.path.src.css))
       .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browsersync.stream()); // перезапуск браузера
