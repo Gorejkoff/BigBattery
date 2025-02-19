@@ -28,16 +28,14 @@ export const scss = () => {
          overrideBrowserslist: ["last 3 version"],
          cascade: true,
       })))
-      .pipe(rename("style.css")) // переименовывает файл 0_style.scss в style.scss
+      // .pipe(rename("style.css")) // переименовывает файл в style.scss
+      .pipe(rename(function (path) {
+         path.basename = path.basename.replace('.scss', '.css'); // оставляет именя как у scss файлов
+      }))
       .pipe(app.gulp.dest(app.path.build.css))  // запись не сжатого файла css, можно будет увидеть не сжатый код
       //.pipe(app.plugins.if(app.isBuild, cleanCss()))
       //.pipe(rename({ extname: ".min.css" })) // переименовывание файла css 
       //.pipe(app.gulp.dest(app.path.build.css)) // адрес куда записывать файл
-
-
-
-
-
       .pipe(app.gulp.src(app.path.src.css))
       .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browsersync.stream()); // перезапуск браузера
