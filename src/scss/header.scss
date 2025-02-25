@@ -443,6 +443,7 @@
          overflow-y: auto;
          background-color: transparent;
          pointer-events: none;
+         transition: background-color 0.3s;
       }
 
       &__in-basket-body {

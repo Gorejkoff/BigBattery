@@ -868,6 +868,8 @@
   overflow-y: auto;
   background-color: transparent;
   pointer-events: none;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 #header-new-section .header__in-basket-body {
