@@ -518,6 +518,12 @@
          color: var(--color-white);
          background-color: var(--color-blue2);
       }
+
+      &__in-basket-empty {
+         font-size: 14px;
+         font-weight: 600;
+         text-align: center;
+      }
    }
 
    .basket-open & {
