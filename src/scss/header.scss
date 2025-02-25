@@ -1,14 +1,64 @@
 @use 'assets/variablesSCSS.scss' as *;
+@use '../scss/castom/last.scss';
 
-body {
+#header-new-section {
+
+   * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      box-sizing: border-box;
+   }
+
+   *,
+   *:before,
+   *:after {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+   }
+
+   :focus,
+   :active {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+   }
+
+   input,
+   button,
+   textarea {
+      background-color: transparent;
+      font-family: inherit;
+   }
+
+   button {
+      cursor: pointer;
+   }
+
+   button::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+   }
+
+   a,
+   a:visited {
+      text-decoration: none;
+   }
+
+   a:hover {
+      text-decoration: none;
+   }
+
+   img {
+      vertical-align: top;
+   }
+
    font-family: var(--font-family);
    font-weight: 400;
    color: var(--color-black);
    --padding-container: #{$padding-mobile};
    --container-width: #{$width-content};
    --max-width-container: #{$max-width-container};
-
-   // scrollbar-gutter: stable;
 
    @media (min-width:768px) {
       --padding-container: #{$padding-tablet};
@@ -17,10 +67,6 @@ body {
    @media (min-width:1024px) {
       --padding-container: #{$padding-desktop};
    }
-}
-
-
-#header-new-section {
 
    .header {
       background-color: transparent;
@@ -293,6 +339,7 @@ body {
          padding: 13px 20px;
          white-space: nowrap;
          transition: background-color 0.3s;
+         color: var(--color-black);
 
          &:hover {
             background-color: var(--color-gray-light2);
@@ -377,13 +424,6 @@ body {
          overflow-y: auto;
          transition: left 0.3s;
       }
-
-
-
-
-
-
-      // header end
    }
 
    .search-open & {
@@ -485,20 +525,10 @@ body {
       }
    }
 
-
-
-
-
-
-
-
    input[type="search"]::-webkit-search-decoration,
    input[type="search"]::-webkit-search-cancel-button,
    input[type="search"]::-webkit-search-results-button,
    input[type="search"]::-webkit-search-results-decoration {
       display: none;
    }
-
-
-
 }
