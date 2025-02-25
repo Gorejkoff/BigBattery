@@ -2,9 +2,9 @@
    <div class="header__top-container">
       <div class="header__top">
 
-         <div class="header__logo">
+         <a href="/" class="header__logo">
             <img src="@img/header-img/BigBattery-HeaderLogo-@600px.png" alt="Логотип BigBattery">
-         </div>
+         </a>
 
          <nav class="header__top-nav">
             <a class="header__top-nav-link" href="/my-account/">
@@ -39,9 +39,9 @@
                <span class="header__open-menu-line-bottom"></span>
             </button>
 
-            <div class="header__logo-mobile">
+            <a href="/" class="header__logo-mobile">
                <img src="@img/header-img/BB-LOGO-white-2024.png" alt="логотип BigBattery">
-            </div>
+            </a>
 
 
             <button class="header__open-search" type="button" aria-label="открыть поиск">
@@ -51,13 +51,13 @@
             </button>
 
             <nav class="header__basket">
-               <a class="header__basket-icon" href="#0" data-icon-quantity="0">
+               <button class="header__basket-icon" data-icon-quantity="0" aria-label="корзина">
                   <svg width="220" height="197" viewBox="0 0 225 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M3 2.5H19.5C24.8645 2.85482 27.041 4.71273 29 11.5L48.0753 108.5M194.5 146C194.5 146 73.5 146 68 146C62.5 146 54 137.5 53 133C52 128.5 48.0753 108.5 48.0753 108.5M48.0753 108.5C48.0753 108.5 179 109 186.5 108.5C194 108 198.5 104.5 200.5 98.5C202.5 92.5 214.5 39.5 216.5 32C218.5 24.5 217 14.5 203.5 14.5C190 14.5 29.5 14.5 29.5 14.5" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
                      <circle cx="180" cy="180" r="14.5" stroke="#fff" stroke-width="11" />
                      <circle cx="80" cy="180" r="14.5" stroke="#fff" stroke-width="11" />
                   </svg>
-               </a>
+               </button>
             </nav>
 
          </div>
@@ -159,6 +159,49 @@
             </li>
          </ol>
       </nav>
+
+   </div>
+
+   <div class="header__in-basket">
+      <div class="header__in-basket-body">
+         <div class="header__in-basket-button">
+            <button class="header__in-basket-close button-close" type="button" aria-label="закрыть список корзины"></button>
+         </div>
+         <div>
+            <div class="header__in-basket-card">
+               <div class="header__in-basket-image">
+                  <img src="@img/png/image-1.png" alt="img">
+               </div>
+               <div class="header__in-basket-content">
+                  <a href="#0" class="header__in-basket-name">12kW 28.6kWh EG4 PowerPro System (ESS)</a>
+                  <div class="header__in-basket-price">
+                     <span>1 x</span>
+                     <span> $</span>
+                     12,350
+                  </div>
+               </div>
+            </div>
+            <div class="header__in-basket-card">
+               <div class="header__in-basket-image">
+                  <img src="@img/png/image-1.png" alt="img">
+               </div>
+               <div class="header__in-basket-content">
+                  <a href="#0" class="header__in-basket-name">12kW 28.6kWh EG4 PowerPro System (ESS)</a>
+                  <div class="header__in-basket-price">
+                     <span>1 x</span>
+                     <span> $</span>
+                     12,350
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="header__in-basket-total">
+            <span>Subtotal:</span>
+            <span>$</span>
+            <span>14,200</span>
+         </div>
+         <a href="https://bigbattery.com/cart/" class="header__in-basket-view" type="button">View cart</a>
+      </div>
    </div>
 
 

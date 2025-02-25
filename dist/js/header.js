@@ -75,6 +75,13 @@ document.addEventListener('click', (event) => {
    if (event.target.closest('.header__open-search')) {
       document.body.classList.toggle('search-open')
    }
+   if (event.target.closest('.header__basket-icon')) {
+      document.body.classList.add('basket-open');
+   } else
+      if (event.target.closest('.header__in-basket-close') || !event.target.closest('.header__in-basket-body')) {
+         document.body.classList.remove('basket-open');
+      }
+
 })
 
 function toggleHeaderMenu() {

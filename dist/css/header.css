@@ -25,6 +25,7 @@
   --color-blue-alice: #f3f9ff;
   --color-pale-blue: #dedfe7;
   --color-green: #008001;
+  --color-green2: #208220;
   --color-grey: #80868b;
   --color-gray-light: #f4f4f4;
   --color-gray-light2: #d8d8d8;
@@ -32,10 +33,13 @@
   --color-forest-wolf: #e5e5e3;
   --color-orange-yellow: #ffc025;
   --color-modal-bg: rgba(0, 0, 0, 0.6);
+  --color-modal-25: rgba(0, 0, 0, 0.25);
   --color-pearl-blackberry: #71717a;
   --color-telegray: #8a8a8a;
   --color-light-telegray: #c8c8c8;
   --color-light-telegray2: #d2d2d2;
+  --color-light-telegray3: #c2c2c2;
+  --color-silver: #c6c6c6;
 }
 
 #product-page-new a:focus,
@@ -564,6 +568,10 @@
   text-decoration: none;
 }
 
+#header-new-section a {
+  color: inherit;
+}
+
 #header-new-section img {
   vertical-align: top;
 }
@@ -847,6 +855,148 @@
   -webkit-transform: translateY(calc(-100% - 100px));
       -ms-transform: translateY(calc(-100% - 100px));
           transform: translateY(calc(-100% - 100px));
+}
+
+#header-new-section .header__in-basket {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+#header-new-section .header__in-basket-body {
+  padding: 20px 30px;
+  pointer-events: all;
+  margin-left: auto;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  background-color: var(--color-white);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#header-new-section .header__in-basket-button {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#header-new-section .header__in-basket-card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+#header-new-section .header__in-basket-card:not(:last-child) {
+  border-bottom: 1px solid var(--color-silver);
+}
+
+#header-new-section .header__in-basket-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45px;
+          flex: 0 0 45px;
+}
+
+#header-new-section .header__in-basket-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+#header-new-section .header__in-basket-name {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 14px;
+  height: 3.5em;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#header-new-section .header__in-basket-price {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#header-new-section .header__in-basket-total {
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid var(--color-silver);
+  color: var(--color-green2);
+}
+
+#header-new-section .header__in-basket-view {
+  display: block;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-blue2);
+}
+
+.basket-open #header-new-section .header__in-basket {
+  background-color: var(--color-modal-25);
+}
+
+.basket-open #header-new-section .header__in-basket-body {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#header-new-section .button-close {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+#header-new-section .button-close::before,
+#header-new-section .button-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--color-light-telegray3);
+}
+
+#header-new-section .button-close::after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#header-new-section .button-close::before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .search-open #header-new-section .header__search {
