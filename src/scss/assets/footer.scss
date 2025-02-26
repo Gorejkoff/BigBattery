@@ -4,7 +4,7 @@
    --color-blue-light: #3798ee;
 }
 
-#product-page-new .hover-link {
+#footer-new-section .hover-link {
    transition: color $tr-time;
 
    &:hover {
@@ -18,7 +18,7 @@
 
 }
 
-#product-page-new .footer {
+#footer-new-section .footer {
    position: relative;
    overflow: hidden;
    color: var(--color-white, #fff) !important;
