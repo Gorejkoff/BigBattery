@@ -66,7 +66,11 @@ document.addEventListener('click', (event) => {
    if (event.target.closest('.header__open-menu')) {
       toggleHeaderMenu()
    }
-   if (!isPC && event.target.closest('.header__nav-list-item')) {
+   if (
+      !isPC &&
+      event.target.closest('.header__nav-list-item') &&
+      event.target.closest('.header__nav-list-item').querySelector('.header__nav-inner-body')
+   ) {
       if (!event.target.closest('.header__nav-list-item').classList.contains('active')) {
          event.preventDefault();
       }
